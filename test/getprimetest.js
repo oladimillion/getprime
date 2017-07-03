@@ -1,40 +1,43 @@
-var assert = require("chai").assert;
-var expect = require("chai").expect;
-//var chai = require("chai").assert;
+const assert = require("chai").assert;
+const expect = require("chai").expect;
 
-var mocha = require("mocha");
+const getPrime = require("../lib/getprime");
 
-var getPrime = require("../lib/getprime");
+"use strict";
 
 describe("Prime number", () => {
 
     describe("handles value less than or equal to zero", () => {
 
-        it("should return Invalid input", () => {
+        it("-1 should return Invalid input", () => {
             assert.equal(getPrime(-1), "Invalid input");
         });
 
-        it("should return Invalid input", () => {
+        it("-100 should return Invalid input", () => {
             assert.equal(getPrime(-100), "Invalid input");
         });
 
-        it("should return Invalid input", () => {
+        it("0 should return Invalid input", () => {
             assert.equal(getPrime(0), "Invalid input");
+        });
+
+        it("empty input should return Invalid input", () => {
+            assert.equal(getPrime(), "Invalid input");
         });
 
     });
 
     describe("handles invalid type input", () => {
 
-        it("should return Invalid input", () => {
+        it("'five' should return Invalid input", () => {
             assert.equal(getPrime("five"), "Invalid input");
         });
 
-        it("should return Invalid input", () => {
+        it("{} should return Invalid input", () => {
             assert.equal(getPrime({}), "Invalid input");
         });
 
-        it("should return Invalid input", () => {
+        it("[] should return Invalid input", () => {
             assert.equal(getPrime([]), "Invalid input");
         });
 
@@ -42,27 +45,27 @@ describe("Prime number", () => {
 
     describe("handles valid input", () => {
 
-        it('should return [ 1, 2, 3, 5, 7, 11, 13, 17, 19 ]', () => {
+        it('19 should return [ 1, 2, 3, 5, 7, 11, 13, 17, 19 ]', () => {
             assert.deepEqual(getPrime(19), [1, 2, 3, 5, 7, 11, 13, 17, 19]);
         });
 
-        it('should return [ 1, 2, 3 ]', () => {
+        it('5 should return [ 1, 2, 3 ]', () => {
             assert.deepEqual(getPrime(5), [1, 2, 3, 5]);
         });
 
-        it('should return [ 1, 2, 3, 5, 7 ]', () => {
+        it('10 should return [ 1, 2, 3, 5, 7 ]', () => {
             assert.deepEqual(getPrime(10), [1, 2, 3, 5, 7]);
         });
 
-        it('should return [ 1, 2, 3, 5, 7, 11, 13, 17, 19 ]', () => {
+        it('15 should return [ 1, 2, 3, 5, 7, 11, 13, 17, 19 ]', () => {
             assert.deepEqual(getPrime(15), [1, 2, 3, 5, 7, 11, 13]);
         });
 
-        it('should return [  1, 2, 3, 5, 7, 11, 13, 17, 19, 23]', () => {
+        it('25 should return [  1, 2, 3, 5, 7, 11, 13, 17, 19, 23]', () => {
             assert.deepEqual(getPrime(25), [1, 2, 3, 5, 7, 11, 13, 17, 19, 23]);
         });
 
-        it('should return [  1, 2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47 ]', () => {
+        it('50 should return [  1, 2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47 ]', () => {
             assert.deepEqual(getPrime(50), [1, 2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47]);
         });
 
