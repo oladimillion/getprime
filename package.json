@@ -6,6 +6,10 @@
     "scripts": {
         "test": "mocha test/getprimetest.js"
     },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/oladimillion/getprime.git"
+    },
     "author": "akande oladimeji",
     "license": "ISC",
     "dependencies": {
