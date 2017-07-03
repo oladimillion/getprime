@@ -1,0 +1,18 @@
+{
+    "name": "getprime",
+    "version": "1.0.0",
+    "description": "simple program to generate array of prime numbers",
+    "main": "lib/getprime.js",
+    "directories": {
+        "test": "test"
+    },
+    "scripts": {
+        "test": "mocha test/getprimetest.js"
+    },
+    "author": "akande oladimeji",
+    "license": "ISC",
+    "devDependencies": {
+        "chai": "^4.0.2",
+        "mocha": "^3.4.2"
+    }
+}
